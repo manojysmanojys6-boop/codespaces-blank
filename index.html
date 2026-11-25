@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Emergency SOS</title>
+<style>
+:root{--bg:#fff7f5;--card:#fff;--text:#2a1514;--muted:#6f5a58;--red:#d62828;--red2:#a61b1b;--line:#f0d6d2;--ok:#1a7f4b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a0f0e;--card:#271817;--text:#fbeceb;--muted:#c4a9a6;--red:#ff4d4d;--red2:#e03a3a;--line:#432826;--ok:#4cd08a}}
+:root[data-theme="dark"]{--bg:#1a0f0e;--card:#271817;--text:#fbeceb;--muted:#c4a9a6;--red:#ff4d4d;--red2:#e03a3a;--line:#432826;--ok:#4cd08a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:16px}
+h1{font-size:1.5rem;margin:0}h2{font-size:1.15rem;margin:28px 0 10px}
+.muted{color:var(--muted);font-size:.9rem}
+header{display:flex;align-items:center;gap:10px;padding:6px 0 12px}
+.hero{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px 16px}
+.hero svg{width:100%;max-width:300px;height:auto}
+.sos{display:block;width:190px;height:190px;margin:8px auto;border-radius:50%;background:radial-gradient(circle at 30% 25%,var(--red),var(--red2));color:#fff;font-size:3rem;font-weight:800;letter-spacing:.06em;text-decoration:none;line-height:190px;box-shadow:0 0 0 10px rgba(214,40,40,.15),0 10px 24px rgba(166,27,27,.4);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 22px rgba(214,40,40,.05),0 10px 24px rgba(166,27,27,.4)}}
+@media (prefers-reduced-motion:reduce){.sos{animation:none}}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+a.svc{display:flex;flex-direction:column;align-items:center;gap:6px;text-decoration:none;color:var(--text);text-align:center;font-weight:600}
+a.svc svg{width:64px;height:64px}
+a.svc small{font-weight:400;color:var(--muted)}
+button,.btn{font:inherit;border:0;border-radius:12px;padding:12px 16px;background:var(--red);color:#fff;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt,button.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
+select,input{font:inherit;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--text);width:100%}
+.loc{word-break:break-all;margin-top:10px}
+.steps{display:grid;gap:10px}
+.step{display:flex;gap:12px;align-items:flex-start}
+.step svg{flex:0 0 48px;width:48px;height:48px}
+.step b{display:block}
+ul.links{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+ul.links a{display:flex;justify-content:space-between;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--text);text-decoration:none;font-weight:600}
+ul.links a span{color:var(--muted);font-weight:400;font-size:.85rem}
+.contact{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.contact:last-child{border:0}
+.form{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-top:10px}
+@media(max-width:480px){.form{grid-template-columns:1fr}}
+footer{margin:28px 0 8px;text-align:center}
+</style>
+</head>
+<body>
+<main>
+<header>
+<svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#d62828"/><path d="M18 8v20M8 18h20" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>
+<div><h1>Emergency SOS</h1><div class="muted">Fast help, one tap away</div></div>
+</header>
+
+<section class="hero" aria-label="Call emergency services">
+<svg viewBox="0 0 300 120" role="img" aria-label="Illustration of an ambulance">
+<rect x="0" y="100" width="300" height="4" rx="2" fill="#f0d6d2"/>
+<rect x="60" y="30" width="130" height="62" rx="8" fill="#fff" stroke="#d62828" stroke-width="3"/>
+<path d="M190 48h38l20 22v22h-58z" fill="#fff" stroke="#d62828" stroke-width="3" stroke-linejoin="round"/>
+<path d="M200 54h24l12 16h-36z" fill="#9fd3f5"/>
+<rect x="60" y="64" width="130" height="8" fill="#d62828"/>
+<path d="M125 38v18M116 47h18" stroke="#d62828" stroke-width="6" stroke-linecap="round"/>
+<circle cx="95" cy="94" r="13" fill="#333"/><circle cx="95" cy="94" r="5" fill="#ccc"/>
+<circle cx="220" cy="94" r="13" fill="#333"/><circle cx="220" cy="94" r="5" fill="#ccc"/>
+<rect x="110" y="20" width="30" height="10" rx="4" fill="#d62828"/>
+<path d="M100 14l-8-6M150 14l8-6M125 10V2" stroke="#d62828" stroke-width="3" stroke-linecap="round"/>
+</svg>
+<a class="sos" id="sosBtn" href="tel:911" aria-label="Call emergency number">SOS</a>
+<div class="muted">Tap to call <b id="sosNum">911</b> · <label for="region">Region:</label></div>
+<div style="max-width:280px;margin:8px auto 0"><select id="region" aria-label="Choose your region">
+<option value="911">United States / Canada — 911</option>
+<option value="112">European Union / most of the world — 112</option>
+<option value="999">United Kingdom — 999</option>
+<option value="000">Australia — 000</option>
+<option value="111">New Zealand — 111</option>
+<option value="100">India (Police) — 100 · or 112</option>
+</select></div>
+</section>
+
+<h2>Call a service</h2>
+<div class="row">
+<a class="card svc" id="pol" href="tel:911">
+<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4l22 8v18c0 14-9 24-22 30C19 54 10 44 10 30V12z" fill="#2563eb"/><path d="M32 18l4 9h10l-8 6 3 10-9-6-9 6 3-10-8-6h10z" fill="#fff"/></svg>
+Police<small>Crime, danger</small></a>
+<a class="card svc" id="amb" href="tel:911">
+<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28" fill="#d62828"/><path d="M32 16v32M16 32h32" stroke="#fff" stroke-width="9" stroke-linecap="round"/></svg>
+Ambulance<small>Medical emergency</small></a>
+<a class="card svc" id="fire" href="tel:911">
+<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M34 4c2 12 16 16 16 34a18 18 0 0 1-36 0c0-8 4-13 8-17 0 6 3 8 5 8 0-9 3-16 7-25z" fill="#f97316"/><path d="M32 60a10 10 0 0 1-10-10c0-6 6-9 8-15 6 4 12 8 12 15a10 10 0 0 1-10 10z" fill="#fde047"/></svg>
+Fire<small>Fire, rescue</small></a>
+</div>
+
+<h2>Share my location</h2>
+<div class="card">
+<p style="margin-top:0">Send responders or a contact exactly where you are.</p>
+<button id="locBtn">📍 Get my location</button>
+<div class="loc" id="locOut" aria-live="polite"></div>
+<div id="locActions" style="display:none;margin-top:10px;gap:8px;flex-wrap:wrap">
+<a class="btn" id="smsLink" href="#">Text it</a>
+<a class="btn alt" id="mapLink" href="#" target="_blank" rel="noopener">Open map</a>
+<button class="alt" id="copyBtn" type="button">Copy link</button>
+</div>
+</div>
+
+<h2>My emergency contacts</h2>
+<div class="card">
+<div id="contacts"><p class="muted" style="margin:0">No contacts yet. Add someone you trust.</p></div>
+<div class="form">
+<input id="cName" placeholder="Name" aria-label="Contact name" autocomplete="off">
+<input id="cPhone" placeholder="Phone" type="tel" aria-label="Contact phone" autocomplete="off">
+<button id="addBtn" type="button">Add</button>
+</div>
+<p class="muted" style="margin-bottom:0">Saved only on this device.</p>
+</div>
+
+<h2>While you wait: first steps</h2>
+<div class="steps">
+<div class="card step">
+<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#fde2e0"/><path d="M24 12l12 22H12z" fill="none" stroke="#d62828" stroke-width="3" stroke-linejoin="round"/><path d="M24 20v7" stroke="#d62828" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="31" r="1.8" fill="#d62828"/></svg>
+<div><b>1. Stay safe</b>Move away from danger if you can. Don’t put yourself at risk.</div></div>
+<div class="card step">
+<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#dbeafe"/><path d="M16 14c0 12 8 20 18 20l3-5-6-3-3 3c-3-1-6-4-7-7l3-3-3-6z" fill="#2563eb"/></svg>
+<div><b>2. Call and stay on the line</b>Give your location, what happened and how many people are hurt. Follow the dispatcher’s instructions.</div></div>
+<div class="card step">
+<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#dcfce7"/><path d="M24 36s-11-7-11-15a6 6 0 0 1 11-3 6 6 0 0 1 11 3c0 8-11 15-11 15z" fill="#16a34a"/></svg>
+<div><b>3. Give basic care</b>Check breathing. Press firmly on heavy bleeding with clean cloth. Start CPR only if trained and the person isn’t breathing.</div></div>
+<div class="card step">
+<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#fef3c7"/><circle cx="24" cy="16" r="5" fill="#d97706"/><path d="M14 36c0-7 4-12 10-12s10 5 10 12z" fill="#d97706"/></svg>
+<div><b>4. Stay with them</b>Keep the person calm and still until help arrives. Unlock the door and turn on lights so responders can find you.</div></div>
+</div>
+
+<h2>Helpful links</h2>
+<ul class="links">
+<li><a href="https://www.redcross.org/get-help/how-to-prepare-for-emergencies.html" target="_blank" rel="noopener">American Red Cross: Prepare <span>↗</span></a></li>
+<li><a href="https://www.ready.gov" target="_blank" rel="noopener">Ready.gov: Disaster safety <span>↗</span></a></li>
+<li><a href="https://988lifeline.org" target="_blank" rel="noopener">988 Suicide &amp; Crisis Lifeline (US) <span>↗</span></a></li>
+<li><a href="https://www.poison.org" target="_blank" rel="noopener">Poison Control (US: 1-800-222-1222) <span>↗</span></a></li>
+<li><a href="https://www.who.int/emergencies" target="_blank" rel="noopener">WHO: Emergencies <span>↗</span></a></li>
+<li><a href="https://www.google.com/maps/search/hospital+near+me" target="_blank" rel="noopener">Find a hospital nearby <span>↗</span></a></li>
+</ul>
+
+<footer class="muted">This page is a quick-reference aid, not a substitute for professional emergency services. If in doubt, call.</footer>
+</main>
+
+<script>
+(function(){
+var $=function(id){return document.getElementById(id)};
+function setNum(n){
+  $('sosNum').textContent=n;
+  ['sosBtn','pol','amb','fire'].forEach(function(i){$(i).setAttribute('href','tel:'+n)});
+}
+$('region').addEventListener('change',function(e){
+  setNum(e.target.value);
+  try{localStorage.setItem('sos-region',e.target.value)}catch(_){}
+});
+try{var r=localStorage.getItem('sos-region');if(r){$('region').value=r;setNum(r)}}catch(_){}
+
+var contacts=[];
+try{contacts=JSON.parse(localStorage.getItem('sos-contacts')||'[]')||[]}catch(_){contacts=[]}
+function save(){try{localStorage.setItem('sos-contacts',JSON.stringify(contacts))}catch(_){}}
+function render(){
+  var box=$('contacts');box.textContent='';
+  if(!contacts.length){var p=document.createElement('p');p.className='muted';p.style.margin='0';p.textContent='No contacts yet. Add someone you trust.';box.appendChild(p);return}
+  contacts.forEach(function(c,i){
+    var d=document.createElement('div');d.className='contact';
+    var n=document.createElement('div');n.innerHTML='<b></b><div class="muted"></div>';
+    n.firstChild.textContent=c.name;n.lastChild.textContent=c.phone;
+    var a=document.createElement('div');a.style.cssText='display:flex;gap:6px';
+    var call=document.createElement('a');call.className='btn';call.textContent='Call';call.href='tel:'+c.phone.replace(/[^\d+]/g,'');
+    var x=document.createElement('button');x.className='alt';x.textContent='✕';x.setAttribute('aria-label','Remove '+c.name);
+    x.onclick=function(){contacts.splice(i,1);save();render()};
+    a.appendChild(call);a.appendChild(x);d.appendChild(n);d.appendChild(a);box.appendChild(d);
+  });
+}
+$('addBtn').addEventListener('click',function(){
+  var n=$('cName').value.trim(),p=$('cPhone').value.trim();
+  if(!n||!p)return;
+  contacts.push({name:n,phone:p});save();render();$('cName').value='';$('cPhone').value='';
+});
+render();
+
+var link='';
+$('locBtn').addEventListener('click',function(){
+  var out=$('locOut');
+  if(!navigator.geolocation){out.textContent='Location isn’t available on this device. Tell responders your address or nearest landmark.';return}
+  out.textContent='Finding you…';
+  navigator.geolocation.getCurrentPosition(function(p){
+    var lat=p.coords.latitude.toFixed(6),lng=p.coords.longitude.toFixed(6);
+    link='https://maps.google.com/?q='+lat+','+lng;
+    out.textContent='Lat '+lat+', Lng '+lng+' (±'+Math.round(p.coords.accuracy)+' m)';
+    $('mapLink').href=link;
+    $('smsLink').href='sms:?&body='+encodeURIComponent('I need help. My location: '+link);
+    $('locActions').style.display='flex';
+  },function(){
+    out.textContent='Couldn’t get your location. Allow location access, or tell responders your address or nearest landmark.';
+  },{enableHighAccuracy:true,timeout:15000,maximumAge:0});
+});
+$('copyBtn').addEventListener('click',function(){
+  try{navigator.clipboard.writeText(link).then(function(){$('copyBtn').textContent='Copied ✓'},function(){$('copyBtn').textContent='Copy failed'})}
+  catch(_){$('copyBtn').textContent='Copy failed'}
+});
+})();
+</script>
+</body>
+</html>
